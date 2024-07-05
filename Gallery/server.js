@@ -8,16 +8,10 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
 const app = express();
-// const upload = multer({ dest: 'uploads/' });
-
-// const users = {}; // Simulated user database
 
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-
-const SECRET_KEY = 'your_secret_key';
 
 mongoose.connect('mongodb://localhost:27017/imageuploaderDB', {
   useNewUrlParser: true,

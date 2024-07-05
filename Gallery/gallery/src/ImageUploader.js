@@ -24,7 +24,6 @@ const ImageUploader = ({handleLogout}) => {
     });
   };
 
-
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     setImages(prevImages => [...prevImages, ...files]);
@@ -85,10 +84,8 @@ return (
     <button className ="upload-button" onClick={handleImageUpload}>Upload</button>
     <div className="image-container">
       {imageUrls.map((url, index) => (
-        
         <div key={index} className="image-container">
           <img src={url} alt={`Uploaded file ${index}`} />
-
           <button
             className="delete-button"
             onClick={() => handleImageDelete(index)} 
@@ -96,7 +93,6 @@ return (
             X
           </button>
         </div>
-        
       ))}
     </div>
     <ToastContainer />
